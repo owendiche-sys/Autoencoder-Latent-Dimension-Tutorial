@@ -1,6 +1,9 @@
-torch
-torchvision
-matplotlib
 numpy
 pandas
+matplotlib
 scikit-learn
+torch
+torchvision
+jupyter
+notebook
+EOF
