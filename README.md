@@ -6,41 +6,26 @@ This repository contains a tutorial and supporting notebook for exploring how **
 
 The project focuses on one central question:
 
-> \*\*How little information can an autoencoder compress into before it forgets too much to reconstruct anything useful?\*\*
+> **How little information can an autoencoder compress into before it forgets too much to reconstruct anything useful?**
 
 To answer that, five otherwise identical models are trained with latent dimensions **2, 8, 16, 32, and 64**, while keeping the rest of the architecture and training setup fixed. This makes the experiment a controlled comparison of bottleneck size and reconstruction quality.
 
-\---
+---
 
 ## Repository Structure
 
-
-
-
-
 ```text
-
 .
-
 ├── data/
-
 ├── figures/
-
 ├── notebook/
-
 ├── tutorial/
-
 ├── .gitignore
-
 ├── LICENSE
-
 ├── README.md
-
 └── requirements.txt
-
-
-
-\---
+```
+---
 
 ## Project Overview
 
@@ -54,7 +39,7 @@ The key idea is simple:
 
 This project is designed as a teaching resource, so it combines explanation, code, figures, practical interpretation, accessibility notes, and ethical considerations.
 
-\---
+---
 
 ## Dataset
 
@@ -62,13 +47,13 @@ The tutorial uses **Fashion-MNIST**, a benchmark dataset of **70,000 grayscale 2
 
 Fashion-MNIST was chosen instead of standard MNIST because clothing images contain richer structure, texture, and silhouette variation, making reconstruction differences easier to observe.
 
-\---
+---
 
 ## Model Architecture
 
 The autoencoder used in this project is a **fully connected (dense) autoencoder** with symmetric encoder and decoder blocks:
 
-`784 -> 256 -> 128 -> latent\_dim -> 128 -> 256 -> 784`
+`784 -> 256 -> 128 -> latent_dim -> 128 -> 256 -> 784`
 
 **Activations**
 
@@ -84,7 +69,7 @@ The autoencoder used in this project is a **fully connected (dense) autoencoder*
 
 The only element changed across experiments is the latent dimension.
 
-\---
+---
 
 ## Experiment Design
 
@@ -107,7 +92,7 @@ The notebook evaluates the models using:
 * **latent space interpolation**
 * an **elbow-style comparison** of compression vs performance
 
-\---
+---
 
 ## Final Results
 
@@ -127,7 +112,7 @@ The notebook evaluates the models using:
 4. **Latent dimension 16** produced the best MSE and SSIM values in this experiment.
 5. Even without labels during training, the **2D latent space shows emergent clustering** by clothing category.
 
-\---
+---
 
 ## Practical Guidance
 
@@ -138,7 +123,7 @@ A useful takeaway from the tutorial is that the "best" latent dimension depends 
 * **32–64 dimensions**: better reconstruction, but with weaker compression efficiency
 * when improvements flatten out, use the **elbow point** rather than choosing the largest bottleneck by default
 
-\---
+---
 
 ## Notebook Walkthrough
 
@@ -156,18 +141,18 @@ The notebook includes:
 10. elbow analysis for selecting latent dimension
 11. final summary and interpretation
 
-\---
+---
 
 ## How to Run
 
-### 1\. Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/owendiche-sys/Autoencoder-Latent-Dimension-Tutorial.git
 cd Autoencoder-Latent-Dimension-Tutorial
 ```
 
-### 2\. Create and activate a virtual environment
+### 2. Create and activate a virtual environment
 
 **Windows (PowerShell)**
 
@@ -183,13 +168,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3\. Install dependencies
+### 3. Install dependencies
 
 ```bash
 pip install torch torchvision matplotlib scikit-image numpy jupyter
 ```
 
-### 4\. Launch Jupyter
+### 4. Launch Jupyter
 
 ```bash
 jupyter notebook
@@ -198,10 +183,10 @@ jupyter notebook
 Then open:
 
 ```text
-autoencoder\_tutorial.ipynb
+autoencoder_tutorial.ipynb
 ```
 
-\---
+---
 
 ## Dependencies
 
@@ -214,7 +199,7 @@ Core packages used in the notebook:
 * `scikit-image`
 * `jupyter`
 
-\---
+---
 
 ## Accessibility
 
@@ -224,7 +209,7 @@ This project was designed with accessibility in mind:
 * figure captions are written to help readers interpret results without relying only on visuals
 * code and tutorial formatting aim to remain readable in screen-reader-compatible formats
 
-\---
+---
 
 ## Ethical Considerations
 
@@ -236,7 +221,7 @@ Although autoencoders are unsupervised, they are not neutral. The learned latent
 
 For that reason, autoencoders should be used carefully in areas such as healthcare, security, or finance.
 
-\---
+---
 
 ## References
 
@@ -251,7 +236,7 @@ The tutorial draws on the following core sources:
 * Xiao, H., Rasul, K. and Vollgraf, R. (2017). *Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms*.
 * PyTorch Documentation.
 
-\---
+---
 
 ## Author
 
